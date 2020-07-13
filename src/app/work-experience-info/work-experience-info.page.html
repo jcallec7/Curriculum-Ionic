@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Listo {{person.name}}, dinos <br> ¿Cuál a sido tu experiencia laboral?</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div id="container">
+
+    <ion-item>
+      <ion-label position="fixed">Empresa</ion-label>
+      <ion-input [(ngModel)]="person.company"></ion-input>
+    </ion-item>
+    <br>
+    <br>
+    <ion-item>
+      <ion-label position="fixed">Cargo</ion-label>
+      <ion-input [(ngModel)]="person.jobPosition"></ion-input>
+    </ion-item>
+    <br>
+    <br>
+    <ion-item>
+      <ion-label position="fixed">Tiempo</ion-label>
+      <ion-input [(ngModel)]="person.time"></ion-input>
+    </ion-item>
+    <br>
+    <br>
+    <ion-item>
+      <ion-label position="fixed">Empresa 2</ion-label>
+      <ion-input [(ngModel)]="person.company2"></ion-input>
+    </ion-item>
+    <br>
+    <br>
+    <ion-item>
+      <ion-label position="fixed">Cargo 2</ion-label>
+      <ion-input [(ngModel)]="person.jobPosition2"></ion-input>
+    </ion-item>
+    <br>
+    <br>
+    <ion-item>
+      <ion-label position="fixed">Tiempo 2</ion-label>
+      <ion-input [(ngModel)]="person.time2"></ion-input>
+    </ion-item>
+    <br>
+    <br>
+    <ion-button shape="round" (click)="redirect()">Siguente</ion-button>
+  </div>
+
+</ion-content>
+

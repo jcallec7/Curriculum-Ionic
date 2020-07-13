@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Primero, tu información personal</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div id="container">
+
+    <ion-item>
+      <app-image-upload [icon]="'camera'" [type]="'camera'" (uploadFinished)="imagenCargada($event)"></app-image-upload>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Cedula</ion-label>
+      <ion-input [(ngModel)]="person.cedula"></ion-input>
+    </ion-item>
+    <br>
+    <br>
+    <ion-item>
+      <ion-label position="fixed">Nombre</ion-label>
+      <ion-input [(ngModel)]="person.name"></ion-input>
+    </ion-item>
+    <br>
+    <br>
+    <ion-item>
+      <ion-label position="fixed">Dirección</ion-label>
+      <ion-input [(ngModel)]="person.address"></ion-input>
+    </ion-item>
+    <br>
+    <br>
+    <ion-item>
+      <ion-label>Fecha de Nacimiento</ion-label>
+      <ion-datetime displayFormat="MM DD YYYY" placeholder="Selecciona una Fecha" [(ngModel)]="person.bornDate"></ion-datetime>
+    </ion-item>
+    <br>
+    <br>
+    <ion-item>
+      <ion-label position="fixed">Sexo</ion-label>
+      <ion-input [(ngModel)]="person.sex"></ion-input>
+    </ion-item>
+    <br>
+    <br>
+    <h5>Si cuenta con experiencia laboral, por favor marque la casilla</h5><ion-checkbox [(ngModel)]="checkbox" checked="false"></ion-checkbox>
+    <br>
+    <br>
+    <ion-button shape="round" (click)="redirect()">Siguente</ion-button>
+    
+    </div>
+
+</ion-content>

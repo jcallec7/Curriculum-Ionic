@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>¿Cuáles son tus titulos mas importantes?</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div id="container">
+
+    <ion-item>
+      <ion-label position="fixed">Titulo de 3er Grado</ion-label>
+      <ion-input [(ngModel)]="person.title3rd"></ion-input>
+    </ion-item>
+    <br>
+    <br>
+    <ion-item>
+      <ion-label position="fixed">Titulo de 4to Grado</ion-label>
+      <ion-input [(ngModel)]="person.title4th"></ion-input>
+    </ion-item>
+    <br>
+    <br>
+    <ion-button shape="round" (click)="redirect()">Siguente</ion-button>
+  </div>
+
+</ion-content>
