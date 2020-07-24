@@ -2,9 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Person } from '../class/person';
 import { Router, NavigationExtras } from '@angular/router';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-import { AngularFireStorage } from '@angular/fire/storage';
-import { LoadingController } from '@ionic/angular';
-import { tap, finalize, filter } from 'rxjs/operators';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 
 @Component({
@@ -15,6 +13,8 @@ import { tap, finalize, filter } from 'rxjs/operators';
 export class PersonalInfoPage implements OnInit {
 
   checkbox =  false
+
+  data = ""
 
   person: Person = {
 
@@ -37,7 +37,7 @@ export class PersonalInfoPage implements OnInit {
 
   };
 
-  constructor(public router: Router, private camera: Camera) { }
+  constructor(public router: Router, private camera: Camera, private geolocation: Geolocation) { }
 
   ngOnInit() {
 
@@ -62,6 +62,19 @@ export class PersonalInfoPage implements OnInit {
      console.log(err)
     });
 
+  }
+
+  locate(){
+
+    this.geolocation.getCurrentPosition().then((resp) => {
+      // resp.coords.latitude
+      // resp.coords.longitude
+    this.data = 'Lat: ' + resp.coords.latitude + ', Long: ' + resp.coords.longitude
+    
+    }).catch((error) => {
+      console.log('Error getting location', error);
+      this.data = error
+    });
   }
 
   redirect(){

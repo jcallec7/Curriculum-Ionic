@@ -34,6 +34,15 @@
     <br>
     <br>
     <ion-item>
+      <ion-button (click)="locate()">Obtener ubicacion</ion-button>
+      
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-label>{{data}}</ion-label>
+    </ion-item>
+    <br>
+    <ion-item>
       <ion-label>Fecha de Nacimiento</ion-label>
       <ion-datetime displayFormat="MM DD YYYY" placeholder="Selecciona una Fecha" [(ngModel)]="person.bornDate"></ion-datetime>
     </ion-item>

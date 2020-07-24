@@ -16,6 +16,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
 
 import { Camera } from '@ionic-native/camera/ngx';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +29,7 @@ import { Camera } from '@ionic-native/camera/ngx';
     StatusBar,
     SplashScreen,
     Camera,
+    Geolocation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

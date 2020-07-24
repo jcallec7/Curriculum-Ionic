@@ -8,6 +8,7 @@ import { PersonalInfoPageRoutingModule } from './personal-info-routing.module';
 
 import { PersonalInfoPage } from './personal-info.page';
 import { ImageUploadComponent } from '../components/image-upload/image-upload.component';
+import { GpsComponent } from '../components/gps/gps.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import { ImageUploadComponent } from '../components/image-upload/image-upload.co
     IonicModule,
     PersonalInfoPageRoutingModule
   ],
-  declarations: [PersonalInfoPage, ImageUploadComponent],
-  exports: [ImageUploadComponent]
+  declarations: [PersonalInfoPage, ImageUploadComponent, GpsComponent],
+  exports: [ImageUploadComponent, GpsComponent]
 })
 export class PersonalInfoPageModule {}
